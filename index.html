@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="google-site-verification" content="dccl69Vk_yYtiw0IAZiT5G8x4Tb_eT-nJW1x5YHZgGs" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>حسام الصائدي | مهندس برمجيات - Full Stack Developer</title>
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Particles.js -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <meta property="og:title" content="المهندس حسام الصايدي" />
+    <meta property="og:description" content="مهندس برمجيات متخصص في تطوير الحلول الرقمية" />
+    <meta property="og:image" content="profile.jpg" />
+    <meta name="google-site-verification" content="dccl69Vk_yYtiw0IAZiT5G8x4Tb_eT-nJW1x5YHZgGs" />
+    <meta name="google-site-verification" content="fMXD2cfhZBvT3vlh21bR1gcax7aNv_qLVyHD2CuAnjo" />
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Cairo', sans-serif;
+            background: linear-gradient(135deg, #0a0f1e 0%, #0a1a2f 100%);
+            color: #eef2ff;
+            line-height: 1.6;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        /* خلفية الجسيمات */
+        #particles-js {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 0;
+        }
+
+        /* تخصيص شريط التمرير */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #1e2a3a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #00d4ff;
+            border-radius: 10px;
+        }
+
+        /* الحاويات */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        section {
+            padding: 100px 0;
+            border-bottom: 1px solid rgba(0, 212, 255, 0.1);
+        }
+
+        /* شريط التنقل */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(10, 15, 30, 0.85);
+            backdrop-filter: blur(15px);
+            z-index: 1000;
+            padding: 15px 0;
+            transition: 0.3s;
+            border-bottom: 1px solid rgba(0, 212, 255, 0.2);
+        }
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #fff, #00d4ff);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+        }
+        .nav-links a {
+            color: #eef2ff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+        .nav-links a:hover {
+            color: #00d4ff;
+        }
+        .menu-icon {
+            display: none;
+            font-size: 1.8rem;
+            cursor: pointer;
+        }
+
+        /* القسم الرئيسي */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 80px;
+        }
+        .hero-content {
+            text-align: center;
+        }
+        .profile-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #00d4ff;
+            box-shadow: 0 20px 30px -10px rgba(0,212,255,0.3);
+            transition: 0.3s;
+        }
+        .profile-img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 25px 35px -12px rgba(0,212,255,0.5);
+        }
+        .hero h1 {
+            font-size: 3rem;
+            margin: 20px 0 10px;
+            background: linear-gradient(135deg, #fff, #00d4ff);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+        .typed-text {
+            font-size: 1.3rem;
+            color: #00d4ff;
+            min-height: 70px;
+        }
+        .hero-buttons {
+            margin-top: 30px;
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .btn {
+            display: inline-block;
+            background: linear-gradient(90deg, #00b4db, #0083b0);
+            padding: 12px 28px;
+            border-radius: 40px;
+            text-decoration: none;
+            color: white;
+            font-weight: 600;
+            transition: 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+        .btn-outline {
+            background: transparent;
+            border: 2px solid #00d4ff;
+            color: #00d4ff;
+        }
+        .btn:hover, .btn-outline:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,180,219,0.4);
+        }
+
+        /* العناوين */
+        .section-title {
+            font-size: 2.2rem;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        .section-title span {
+            background: linear-gradient(90deg, #00d4ff, #0099cc);
+            padding: 0 15px;
+            border-radius: 40px;
+        }
+
+        /* الخدمات والمهارات */
+        .services-grid, .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        .service-card, .skill-card {
+            background: rgba(15, 25, 45, 0.7);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px 20px;
+            text-align: center;
+            transition: 0.3s;
+            border: 1px solid rgba(0,212,255,0.2);
+            position: relative;
+            overflow: hidden;
+        }
+        .service-card::before, .skill-card::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, #00d4ff, #0099cc, #00d4ff);
+            background-size: 200% 200%;
+            z-index: -1;
+            border-radius: 20px;
+            opacity: 0;
+            transition: 0.5s;
+        }
+        .service-card:hover::before, .skill-card:hover::before {
+            opacity: 1;
+            animation: borderGlow 3s ease infinite;
+        }
+        @keyframes borderGlow {
+            0% { background-position: 0% 0%; }
+            50% { background-position: 100% 100%; }
+            100% { background-position: 0% 0%; }
+        }
+        .service-card i, .skill-card i {
+            font-size: 3rem;
+            color: #00d4ff;
+            margin-bottom: 15px;
+        }
+
+        /* الإحصائيات */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            text-align: center;
+        }
+        .stat-card {
+            background: rgba(0, 212, 255, 0.1);
+            padding: 30px;
+            border-radius: 20px;
+            backdrop-filter: blur(5px);
+        }
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            color: #00d4ff;
+        }
+
+        /* المشاريع */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 30px;
+        }
+        .project-card {
+            background: rgba(15, 25, 45, 0.7);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: 0.3s;
+            border: 1px solid rgba(0,212,255,0.2);
+        }
+        .project-card:hover {
+            transform: translateY(-10px);
+            border-color: #00d4ff;
+        }
+        .project-img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            background: #1e2a3a;
+        }
+        .project-info {
+            padding: 20px;
+        }
+        .project-tech {
+            color: #7aa2f7;
+            font-size: 0.85rem;
+            margin: 8px 0;
+        }
+        .project-btn {
+            background: transparent;
+            border: 2px solid #00d4ff;
+            padding: 8px 20px;
+            border-radius: 30px;
+            cursor: pointer;
+            color: #00d4ff;
+            margin-top: 15px;
+            transition: 0.2s;
+        }
+        .project-btn:hover {
+            background: #00d4ff;
+            color: #0a0f1e;
+        }
+
+        /* أزرار التواصل الاجتماعي */
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+        .social-icon {
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            transition: 0.3s;
+            text-decoration: none;
+        }
+        .social-icon.whatsapp { background: #25D366; color: white; }
+        .social-icon.facebook { background: #1877F2; color: white; }
+        .social-icon.linkedin { background: #0077B5; color: white; }
+        .social-icon.github { background: #333; color: white; }
+        .social-icon:hover {
+            transform: translateY(-5px) scale(1.1);
+        }
+
+        /* تذييل الصفحة */
+        footer {
+            text-align: center;
+            padding: 30px;
+            border-top: 1px solid rgba(0,212,255,0.2);
+            position: relative;
+            z-index: 2;
+        }
+
+        /* متجاوب */
+        @media (max-width: 768px) {
+            .menu-icon {
+                display: block;
+            }
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                width: 100%;
+                background: rgba(10, 15, 30, 0.95);
+                backdrop-filter: blur(15px);
+                flex-direction: column;
+                text-align: center;
+                padding: 30px;
+                transition: 0.3s;
+            }
+            .nav-links.active {
+                left: 0;
+            }
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .section-title {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- خلفية الجسيمات -->
+<div id="particles-js"></div>
+
+<!-- شريط التنقل -->
+<nav class="navbar">
+    <div class="container">
+        <div class="logo">حسام الصائدي</div>
+        <div class="menu-icon" id="menuIcon">
+            <i class="fas fa-bars"></i>
+        </div>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#home">الرئيسية</a></li>
+            <li><a href="#services">الخدمات</a></li>
+            <li><a href="#skills">المهارات</a></li>
+            <li><a href="#projects">المشاريع</a></li>
+            <li><a href="#contact">تواصل</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- المحتوى الرئيسي -->
+<div class="container">
+    <!-- القسم الرئيسي -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <img src="profile.jpg" alt="حسام الصائدي" class="profile-img" onerror="this.src='https://via.placeholder.com/180?text=Hossam'">
+            <h1>حسام عمر محمد الصائدي</h1>
+            <div class="typed-text" id="typedText"></div>
+            <p>مطور برمجيات شامل - حاصل على بكالوريوس بكالوريوس تقنية معلومات it  </p>
+            <div class="hero-buttons">
+                <a href="#projects" class="btn">مشاريعي <i class="fas fa-arrow-down"></i></a>
+                <a href="Cv.pdf" download class="btn btn-outline"><i class="fas fa-download"></i> تحميل السيرة</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- الخدمات -->
+    <section id="services">
+        <h2 class="section-title"><span>الخدمات التي أقدمها</span></h2>
+        <div class="services-grid">
+            <div class="service-card"><i class="fas fa-laptop-code"></i><h3>تطوير ويب</h3><p>مواقع وتطبيقات ويب متكاملة بأمان عالي</p></div>
+            <div class="service-card"><i class="fas fa-mobile-alt"></i><h3>تطبيقات موبايل</h3><p>Android و iOS باستخدام Flutter</p></div>
+            <div class="service-card"><i class="fas fa-chart-line"></i><h3>أنظمة ERP ومحاسبية</h3><p>إدارة متكاملة للشركات</p></div>
+            <div class="service-card"><i class="fas fa-microchip"></i><h3>إنترنت الأشياء والذكاء الاصطناعي</h3><p>حلول IoT و AI متطورة</p></div>
+            <div class="service-card"><i class="fas fa-gamepad"></i><h3>برمجة ألعاب</h3><p>ألعاب تفاعلية احترافية</p></div>
+            <div class="service-card"><i class="fas fa-network-wired"></i><h3>شبكات ودعم فني</h3><p>إدارة شبكات سلكية ولاسلكية</p></div>
+        </div>
+    </section>
+
+    <!-- المهارات -->
+    <section id="skills">
+        <h2 class="section-title"><span>التقنيات التي أتقنها</span></h2>
+        <div class="skills-grid">
+            <div class="skill-card"><i class="fab fa-laravel"></i><h3>Laravel</h3><p>تطوير الواجهات الخلفية</p></div>
+            <div class="skill-card"><i class="fab fa-flutter"></i><h3>Flutter</h3><p>تطوير تطبيقات الموبايل</p></div>
+            <div class="skill-card"><i class="fas fa-database"></i><h3>MySQL / Firebase</h3><p>قواعد البيانات</p></div>
+            <div class="skill-card"><i class="fab fa-python"></i><h3>Python / AI</h3><p>الذكاء الاصطناعي</p></div>
+            <div class="skill-card"><i class="fab fa-js"></i><h3>JavaScript / APIs</h3><p>تطبيقات ويب تفاعلية</p></div>
+            <div class="skill-card"><i class="fas fa-cloud"></i><h3>DevOps / Cloud</h3><p>نشر وإدارة السيرفرات</p></div>
+        </div>
+    </section>
+
+    <!-- الإحصائيات -->
+    <section>
+        <h2 class="section-title"><span>إنجازاتي</span></h2>
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number" id="statProjects">0</div>
+                <p>مشروعاً منجزاً</p>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="statExperience">0</div>
+                <p>سنوات خبرة</p>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="statClients">0</div>
+                <p>عميل سعيد</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- المشاريع -->
+    <section id="projects">
+        <h2 class="section-title"><span>أعمالي ومشاريعي</span></h2>
+        <div class="projects-grid" id="projectsContainer"></div>
+    </section>
+
+    <!-- أزرار التواصل الاجتماعي -->
+    <section id="contact">
+        <h2 class="section-title"><span>تواصل معي</span></h2>
+        <div class="social-links">
+            <a href="https://wa.me/967778470907" target="_blank" class="social-icon whatsapp"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://www.facebook.com/profile.php?id=61560705749628" target="_blank" class="social-icon facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.linkedin.com/in/%D8%A7%D9%84%D9%85%D9%87%D9%86%D8%AF%D8%B3-%D8%AD%D8%B3%D8%A7%D9%85-%D8%A7%D9%84%D8%B5%D8%A7%D9%8A%D8%AF%D9%8A-68b0023a0" target="_blank" class="social-icon linkedin"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://github.com/hossamalsaydy" target="_blank" class="social-icon github"><i class="fab fa-github"></i></a>
+        </div>
+        <div style="text-align: center; margin-top: 20px;">
+            <a href="Cv.pdf" download class="btn"><i class="fas fa-download"></i> تحميل السيرة الذاتية (PDF)</a>
+        </div>
+    </section>
+</div>
+
+<footer>
+    <p>© 2026 حسام الصائدي - جميع الحقوق محفوظة</p>
+</footer>
+
+<script>
+    // بيانات المشاريع
+    const projects = [
+        { name: "لوحة تحكم متجر إلكتروني", tech: "Laravel + API + MySQL", link: "https://wa.me/p/9700828300016243/967778470907", img: "project1.png" },
+        { name: "تطبيق متجر إلكتروني (تجار)", tech: "Flutter + API", link: "https://wa.me/p/24391464117109978/967778470907", img: "project1.png" },
+        { name: "تطبيق متجر إلكتروني (عملاء)", tech: "Flutter + API", link: "https://wa.me/p/9928897177231443/967778470907", img: "project1.png" },
+        { name: "تطبيق طبي - علاج طبيعي", tech: "Flutter + Firebase", link: "https://wa.me/p/10030806777016247/967778470907", img: "project4.png" },
+        { name: "تطبيق لوحة الألوان", tech: "Flutter", link: "https://wa.me/p/25323311454000457/967778470907", img: "project5.png" },
+        { name: "تطبيق بقالة الحارة", tech: "Flutter", link: "https://wa.me/p/25492556563751302/967778470907", img: "project6.png" },
+        { name: "متجر إلكتروني مخصص", tech: "Laravel", link: "https://wa.me/p/26696498789961768/967778470907", img: "project7.png" },
+        { name: "تطبيق حساب المقاولين", tech: "Flutter", link: "https://wa.me/p/24146100711672793/967778470907", img: "project8.png" },
+        { name: "نظام تأجير السيارات", tech: "دوت نت + MySQL", link: "https://wa.me/p/25584120247841115/967778470907", img: "project9.png" },
+        { name: "تطبيق شركة توظيف", tech: "Flutter", link: "https://wa.me/p/24474038485522544/967778470907", img: "project10.png" },
+        { name: "روبوت تتبع الأجسام", tech: "IoT + AI", link: "https://wa.me/p/9450059665093859/967778470907", img: "project11.png" },
+        { name: "موقع ويب شخصي", tech: "HTML + CSS + JS", link: "https://wa.me/p/8213300925394737/967778470907", img: "project12.png" },
+        { name: "شات مساعد ذكي", tech: "HTML/CSS/JS + AI API", link: "https://sprightly-salamander-31ed3c.netlify.app/", img: "project13.png" },
+        { name: "منصة تجارة رقمية", tech: "Laravel + Flutter + API", link: "#", img: "project14.png" }
+    ];
+
+    // تعبئة المشاريع
+    const container = document.getElementById('projectsContainer');
+    projects.forEach(proj => {
+        const card = document.createElement('div');
+        card.className = 'project-card';
+        card.innerHTML = `
+            <img src="${proj.img}" alt="${proj.name}" class="project-img" onerror="this.src='https://via.placeholder.com/300x180?text=${encodeURIComponent(proj.name)}'">
+            <div class="project-info">
+                <h3>${proj.name}</h3>
+                <div class="project-tech"><i class="fas fa-code"></i> ${proj.tech}</div>
+                <button class="project-btn" onclick="window.open('${proj.link}', '_blank')">تفاصيل المشروع <i class="fas fa-external-link-alt"></i></button>
+            </div>
+        `;
+        container.appendChild(card);
+    });
+
+    // تأثير الكتابة
+    const texts = ["مطور برمجيات شامل", "خبير في Flutter و Laravel", "مطور أنظمة ERP ومحاسبية", "مطور تطبيقات موبايل وويب"];
+    let i = 0, j = 0, isDeleting = false;
+    function typeEffect() {
+        const current = texts[i];
+        if (isDeleting) {
+            document.getElementById("typedText").innerHTML = current.substring(0, j-1);
+            j--;
+            if (j === 0) {
+                isDeleting = false;
+                i = (i + 1) % texts.length;
+            }
+        } else {
+            document.getElementById("typedText").innerHTML = current.substring(0, j+1);
+            j++;
+            if (j === current.length) {
+                isDeleting = true;
+                setTimeout(() => {}, 1500);
+            }
+        }
+        setTimeout(typeEffect, isDeleting ? 50 : 100);
+    }
+    typeEffect();
+
+    // عداد الإحصائيات المتحرك
+    function animateCounter(id, target) {
+        let current = 0;
+        const element = document.getElementById(id);
+        const interval = setInterval(() => {
+            if (current >= target) {
+                clearInterval(interval);
+                element.innerText = target;
+            } else {
+                current += Math.ceil(target / 50);
+                if (current > target) current = target;
+                element.innerText = current;
+            }
+        }, 30);
+    }
+    animateCounter("statProjects", 14);
+    animateCounter("statExperience", 3);
+    animateCounter("statClients", 25);
+
+    // خلفية الجسيمات
+    particlesJS("particles-js", {
+        particles: {
+            number: { value: 80, density: { enable: true, value_area: 800 } },
+            color: { value: "#00d4ff" },
+            shape: { type: "circle" },
+            opacity: { value: 0.5, random: true },
+            size: { value: 3, random: true },
+            line_linked: { enable: true, distance: 150, color: "#00d4ff", opacity: 0.4, width: 1 },
+            move: { enable: true, speed: 2, direction: "none", random: false, straight: false, out_mode: "out" }
+        },
+        interactivity: {
+            detect_on: "canvas",
+            events: { onhover: { enable: true, mode: "repulse" }, onclick: { enable: true, mode: "push" }, resize: true }
+        },
+        retina_detect: true
+    });
+
+    // قائمة الهمبرغر
+    const menuIcon = document.getElementById("menuIcon");
+    const navLinks = document.getElementById("navLinks");
+    menuIcon.addEventListener("click", () => navLinks.classList.toggle("active"));
+    document.querySelectorAll(".nav-links a").forEach(link => {
+        link.addEventListener("click", () => navLinks.classList.remove("active"));
+    });
+</script>
+</body>
+    </html>
