@@ -22,8 +22,12 @@
 
 <!-- Navbar -->
 <nav class="navbar">
-    <div class="container">
+    <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
         <div class="logo" id="siteLogo">حسام الصائدي</div>
+        <div style="display: flex; gap: 15px; align-items: center;">
+            <button class="admin-btn" id="openAdminBtn">لوحة التحكم</button>
+            <button class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></button>
+        </div>
         <ul class="nav-links">
             <li><a href="#home">الرئيسية</a></li>
             <li><a href="#about">النبذة</a></li>
@@ -32,10 +36,23 @@
             <li><a href="#projects">أعمالي</a></li>
             <li><a href="#skills">المهارات</a></li>
             <li><a href="#contact">تواصل</a></li>
-            <li><button class="admin-btn" id="openAdminBtn">لوحة التحكم</button></li>
         </ul>
     </div>
 </nav>
+
+<!-- Sidebar Navigation -->
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+<aside class="sidebar" id="sidebar">
+    <ul class="sidebar-nav">
+        <li><a href="#home" onclick="closeSidebar()">الرئيسية</a></li>
+        <li><a href="#about" onclick="closeSidebar()">النبذة</a></li>
+        <li><a href="#education" onclick="closeSidebar()">التعليم</a></li>
+        <li><a href="#experience" onclick="closeSidebar()">الخبرات</a></li>
+        <li><a href="#projects" onclick="closeSidebar()">أعمالي</a></li>
+        <li><a href="#skills" onclick="closeSidebar()">المهارات</a></li>
+        <li><a href="#contact" onclick="closeSidebar()">تواصل</a></li>
+    </ul>
+</aside>
 
 <div class="container">
     <!-- Hero Section -->
@@ -171,6 +188,7 @@
 <script src="assets/js/data.js"></script>
 <script src="assets/js/script.js"></script>
 <script src="assets/js/admin.js"></script>
+<script src="assets/js/mobile.js"></script>
 
 </body>
 </html>

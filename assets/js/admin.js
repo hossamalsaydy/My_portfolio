@@ -65,7 +65,12 @@ function renderEditor() {
                     <div class="form-group"><input type="text" id="newEduDegree" placeholder="المؤهل"></div>
                     <div class="form-group"><input type="text" id="newEduInst" placeholder="المؤسسة التعليمية"></div>
                     <div class="form-group"><input type="text" id="newEduPeriod" placeholder="الفترة (مثلاً: 2019 - 2023)"></div>
-                    <div class="form-group"><input type="text" id="newEduImg" placeholder="رابط صورة الشهادة"></div>
+                    <div class="form-group">
+                        <div class="file-upload-wrapper">
+                            <input type="text" id="newEduImg" placeholder="رابط صورة الشهادة" style="flex: 1;">
+                            <button class="upload-btn" onclick="triggerImageUpload()"><i class="fas fa-cloud-upload-alt"></i> رفع صورة</button>
+                        </div>
+                    </div>
                     <button class="btn" onclick="addEducation()">إضافة</button>
                 </div>
             `;
@@ -133,7 +138,12 @@ function renderEditor() {
                     <div class="form-group"><textarea id="newProjDesc" placeholder="وصف قصير"></textarea></div>
                     <div class="form-group"><input type="text" id="newProjTech" placeholder="التقنيات (مفصولة بفاصلة)"></div>
                     <div class="form-group"><input type="text" id="newProjLink" placeholder="رابط المشروع"></div>
-                    <div class="form-group"><input type="text" id="newProjImg" placeholder="رابط الصورة التوضيحية"></div>
+                    <div class="form-group">
+                        <div class="file-upload-wrapper">
+                            <input type="text" id="newProjImg" placeholder="رابط الصورة التوضيحية" style="flex: 1;">
+                            <button class="upload-btn" onclick="triggerImageUpload()"><i class="fas fa-cloud-upload-alt"></i> رفع صورة</button>
+                        </div>
+                    </div>
                     <button class="btn" onclick="addProject()">إضافة</button>
                 </div>
             `;
