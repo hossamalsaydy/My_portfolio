@@ -158,6 +158,7 @@ function saveAbout() {
     data.about.name = document.getElementById('editName').value;
     data.about.title = document.getElementById('editTitle').value;
     saveData(data);
+    if (window.refreshSEO) window.refreshSEO();
     alert("تم التحديث بنجاح!");
     renderEditor();
 }
@@ -174,6 +175,7 @@ function addEducation() {
     };
     data.education.push(newEdu);
     saveData(data);
+    if (window.refreshSEO) window.refreshSEO();
     renderEditor();
 }
 
@@ -189,6 +191,7 @@ function addExperience() {
     };
     data.experience.push(newExp);
     saveData(data);
+    if (window.refreshSEO) window.refreshSEO();
     renderEditor();
 }
 
@@ -202,6 +205,7 @@ function addSkill() {
     };
     data.skills.push(newSkill);
     saveData(data);
+    if (window.refreshSEO) window.refreshSEO();
     renderEditor();
 }
 
@@ -218,6 +222,7 @@ function addProject() {
     };
     data.projects.push(newProj);
     saveData(data);
+    if (window.refreshSEO) window.refreshSEO();
     renderEditor();
 }
 
@@ -226,6 +231,7 @@ function deleteItem(type, id) {
         const data = loadData();
         data[type] = data[type].filter(item => item.id !== id);
         saveData(data);
+        if (window.refreshSEO) window.refreshSEO();
         renderEditor();
     }
 }

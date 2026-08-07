@@ -34,11 +34,19 @@ const defaultData = {
     projects: [
         {
             id: 1,
-            name: "لوحة تحكم متجر إلكتروني",
-            description: "نظام متكامل لإدارة المتاجر الإلكترونية مع تقارير مفصلة",
-            tech: "Laravel + API + MySQL",
+            name: "متجر الكتروني قابل للتخصيص",
+            description: "نظام متكامل لإدارة المتاجر الإلكترونية مع إمكانية التخصيص الكاملة وتقارير مفصلة، مصمم لزيادة المبيعات وتسهيل الإدارة.",
+            tech: "Laravel, Vue.js, MySQL",
             link: "https://wa.me/p/9700828300016243/967778470907",
             image: "project1.png"
+        },
+        {
+            id: 2,
+            name: "تطبيق دفتر الديون الذكي",
+            description: "تطبيق موبايل مبتكر لإدارة الديون والحسابات الشخصية والتجارية بدقة عالية مع تنبيهات ذكية.",
+            tech: "Flutter, Firebase",
+            link: "https://wa.me/967778470907",
+            image: "project2.png"
         }
     ],
     stats: {
