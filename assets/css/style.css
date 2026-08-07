@@ -200,10 +200,33 @@ section {
     display: flex;
     align-items: center;
     padding-top: 80px;
+    position: relative;
+    overflow: hidden;
+}
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(10, 15, 30, 0.7) 0%, rgba(10, 26, 47, 0.7) 100%);
+    z-index: 1;
+}
+.hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
 }
 .hero-content {
     text-align: center;
     width: 100%;
+    position: relative;
+    z-index: 2;
 }
 .profile-img {
     width: 180px;
