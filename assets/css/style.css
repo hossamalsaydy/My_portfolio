@@ -13,6 +13,126 @@ body {
     overflow-x: hidden;
 }
 
+/* Splash Screen */
+.splash-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+.splash-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+.splash-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(10, 15, 30, 0.5) 0%, rgba(10, 26, 47, 0.5) 100%);
+    z-index: 1;
+}
+.splash-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: white;
+}
+.splash-logo {
+    font-size: 4rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, #fff, #00d4ff);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    margin-bottom: 20px;
+    animation: fadeInScale 1s ease-out;
+}
+.splash-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    animation: fadeInScale 1.2s ease-out;
+}
+.splash-subtitle {
+    font-size: 1.2rem;
+    color: #00d4ff;
+    margin-bottom: 30px;
+    animation: fadeInScale 1.4s ease-out;
+}
+.splash-loader {
+    width: 50px;
+    height: 50px;
+    border: 3px solid rgba(0, 212, 255, 0.2);
+    border-top: 3px solid #00d4ff;
+    border-radius: 50%;
+    margin: 0 auto;
+    animation: spin 1s linear infinite;
+}
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Disintegration Animation */
+.splash-screen.disintegrate {
+    animation: disintegrate 1s ease-in forwards;
+}
+@keyframes disintegrate {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 0;
+        transform: scale(1.1) rotateZ(5deg);
+        pointer-events: none;
+    }
+}
+
+.splash-particle {
+    position: fixed;
+    pointer-events: none;
+    z-index: 9998;
+}
+@keyframes particleDisintegrate {
+    0% {
+        opacity: 1;
+        transform: translate(0, 0) scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(var(--tx), var(--ty)) scale(0);
+    }
+}
+
 #particles-js {
     position: fixed;
     width: 100%;
@@ -20,6 +140,10 @@ body {
     top: 0;
     left: 0;
     z-index: 0;
+}
+
+body.splash-active {
+    overflow: hidden;
 }
 
 ::-webkit-scrollbar {
@@ -200,33 +324,10 @@ section {
     display: flex;
     align-items: center;
     padding-top: 80px;
-    position: relative;
-    overflow: hidden;
-}
-.hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(135deg, rgba(10, 15, 30, 0.7) 0%, rgba(10, 26, 47, 0.7) 100%);
-    z-index: 1;
-}
-.hero-video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: 0;
 }
 .hero-content {
     text-align: center;
     width: 100%;
-    position: relative;
-    z-index: 2;
 }
 .profile-img {
     width: 180px;

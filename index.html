@@ -18,7 +18,21 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
-<body>
+<body class="splash-active">
+
+<!-- Splash Screen -->
+<div class="splash-screen" id="splashScreen">
+    <video class="splash-video" autoplay muted loop playsinline>
+        <source src="assets/video/hero-bg.mp4" type="video/mp4">
+    </video>
+    <div class="splash-overlay"></div>
+    <div class="splash-content">
+        <div class="splash-logo">💻</div>
+        <h1 class="splash-title">حسام الصائدي</h1>
+        <p class="splash-subtitle">مهندس برمجيات متخصص</p>
+        <div class="splash-loader"></div>
+    </div>
+</div>
 
 <!-- Particles Background -->
 <div id="particles-js"></div>
@@ -60,9 +74,6 @@
 <div class="container">
     <!-- Hero Section -->
     <section id="home" class="hero">
-        <video class="hero-video" autoplay muted loop playsinline>
-            <source src="assets/video/hero-bg.mp4" type="video/mp4">
-        </video>
         <div class="hero-content">
             <img src="IMG_20260709_201517_315.png" alt="حسام الصائدي" class="profile-img" id="heroImg">
             <h1 id="heroName">حسام عمر محمد الصائدي</h1>
@@ -191,6 +202,7 @@
 </footer>
 
 <!-- Scripts -->
+<script src="assets/js/splash.js"></script>
 <script src="assets/js/data.js"></script>
 <script src="assets/js/script.js"></script>
 <script src="assets/js/admin.js"></script>
