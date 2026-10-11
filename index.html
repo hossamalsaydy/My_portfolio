@@ -221,6 +221,38 @@
     <p>© 2026 جميع الحقوق محفوظة - حسام الصائدي</p>
 </footer>
 
+<!-- مساعد الموقع الذكي — نموذج مفتوح يعمل على جهاز الزائر -->
+<div class="assistant-widget" id="assistantWidget">
+    <button class="assistant-launcher" id="assistantToggle" type="button" aria-expanded="false" aria-controls="assistantPanel" aria-label="فتح مساعد الموقع">
+        <i class="fas fa-comments" aria-hidden="true"></i>
+        <span>اسأل المساعد</span>
+    </button>
+    <section class="assistant-panel" id="assistantPanel" aria-label="مساعد الموقع" hidden>
+        <header class="assistant-header">
+            <div>
+                <h2>مساعد حسام الذكي</h2>
+                <p>عن الموقع والبرمجة والتقنية</p>
+            </div>
+            <div class="assistant-header-actions">
+                <button id="assistantReset" type="button" class="assistant-icon-button" aria-label="محادثة جديدة" title="محادثة جديدة"><i class="fas fa-rotate-right" aria-hidden="true"></i></button>
+                <button id="assistantClose" type="button" class="assistant-icon-button" aria-label="إغلاق المساعد" title="إغلاق"><i class="fas fa-xmark" aria-hidden="true"></i></button>
+            </div>
+        </header>
+        <div class="assistant-notice">المحادثة تعمل على جهازك دون إرسال الرسائل إلى خدمة خارجية. قد يحتاج التشغيل الأول إلى تنزيل النموذج.</div>
+        <div class="assistant-messages" id="assistantMessages" role="log" aria-live="polite" aria-relevant="additions text"></div>
+        <div class="assistant-suggestions" aria-label="أسئلة مقترحة">
+            <button type="button" data-assistant-prompt="ما أبرز المشاريع الموجودة في الموقع؟">ما أبرز المشاريع؟</button>
+            <button type="button" data-assistant-prompt="كيف أبدأ بتعلم Flutter؟">كيف أبدأ بـ Flutter؟</button>
+        </div>
+        <form class="assistant-form" id="assistantForm">
+            <label class="assistant-visually-hidden" for="assistantInput">اكتب سؤالك</label>
+            <textarea id="assistantInput" rows="2" maxlength="1200" placeholder="اكتب سؤالك هنا…" required></textarea>
+            <button id="assistantSend" type="submit">إرسال</button>
+        </form>
+        <p class="assistant-status" id="assistantStatus" role="status"></p>
+    </section>
+</div>
+
 <!-- Scripts -->
 <script src="assets/js/splash.js"></script>
 <script src="assets/js/data.js"></script>
@@ -228,6 +260,7 @@
 <script src="assets/js/admin.js"></script>
     <script src="assets/js/mobile.js"></script>
     <script src="assets/js/seo.js"></script>
+    <script type="module" src="assets/js/assistant.js"></script>
 
 </body>
 </html>

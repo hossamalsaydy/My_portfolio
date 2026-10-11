@@ -140,9 +140,11 @@ function renderEditor() {
                     <div class="form-group"><input type="text" id="newProjLink" placeholder="رابط المشروع"></div>
                     <div class="form-group">
                         <div class="file-upload-wrapper">
-                            <input type="text" id="newProjImg" placeholder="رابط الصورة التوضيحية" style="flex: 1;">
+                            <input type="text" id="newProjImg" placeholder="رابط الصورة أو مفتاح الصورة المرفوعة" style="flex: 1;">
                             <button class="upload-btn" onclick="triggerImageUpload()"><i class="fas fa-cloud-upload-alt"></i> رفع صورة</button>
                         </div>
+                        <img id="projectImagePreview" class="admin-project-image-preview" alt="معاينة صورة المشروع" hidden>
+                        <small class="admin-upload-hint">يمكنك رفع صورة أو إدخال رابط مباشر. الصور المرفوعة تحفظ في هذا المتصفح.</small>
                     </div>
                     <button class="btn" onclick="addProject()">إضافة</button>
                 </div>
@@ -223,6 +225,7 @@ function addProject() {
     data.projects.push(newProj);
     saveData(data);
     if (window.refreshSEO) window.refreshSEO();
+    if (typeof renderMainContent === 'function') renderMainContent(data);
     renderEditor();
 }
 

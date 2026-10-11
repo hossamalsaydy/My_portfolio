@@ -46,7 +46,7 @@ function renderMainContent(data) {
     projContent.innerHTML = data.projects.map(proj => `
         <div class="card project-card">
             <div class="project-img-container" onclick="this.classList.toggle('active')">
-                <img src="${proj.image}" class="project-img" onerror="this.src='https://via.placeholder.com/300x200?text=${encodeURIComponent(proj.name)}'">
+                <img src="${getImageUrl(proj.image)}" class="project-img" alt="صورة المشروع" loading="lazy" onerror="this.onerror=null;this.src='https://via.placeholder.com/300x200?text=${encodeURIComponent(proj.name)}'">
                 <div class="project-overlay">
                     <p>${proj.description}</p>
                 </div>
